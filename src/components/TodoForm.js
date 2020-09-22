@@ -1,6 +1,8 @@
 import React from 'react';
 // TODO: Import the application's Redux store instance
 // TODO: Import the `createTask` action creator function
+import store from '../store';
+import {createTask} from '../actions/taskActions';
 
 class TodoForm extends React.Component {
   constructor(props) {
@@ -18,6 +20,7 @@ class TodoForm extends React.Component {
     e.preventDefault();
     // TODO: Invoke `createTask` with the `inputValue` state
     //       and dispatch a 'CREATE_TASK' action
+    store.dispatch(createTask(this.state.inputValue));
   }
 
   render() {
